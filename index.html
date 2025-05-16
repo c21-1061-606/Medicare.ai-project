@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Symptom Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Splash screen styles */
+        .splash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #0096c7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            z-index: 10;
+            animation: fadeOutSplash 2.5s ease-out forwards;
+        }
+
+        @keyframes fadeOutSplash {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 480px;
+            opacity: 0;
+            animation: fadeSlideIn 1s ease-out forwards;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        h1 {
+            color: #0077b6;
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #d0dfe6;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background-color: #fdfefe;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            background-color: #0096c7;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #0077b6;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash screen -->
+    <div class="splash">Medicare<span style="color:#fff">.</span><span style="color:#fcd34d">ai</span></div>
+
+    <!-- Main UI -->
+    <div class="container">
+        <h1>AI Symptom Checker</h1>
+        <form method="POST">
+            <label for="symptoms">Describe your symptoms:</label>
+            <input type="text" name="symptoms" id="symptoms" placeholder="e.g., fever, fatigue, sore throat" required>
+            <button type="submit">Analyze Symptoms</button>
+        </form>
+        <div class="footer">Powered by AI • Your data remains secure</div>
+    </div>
+</body>
+</html>
